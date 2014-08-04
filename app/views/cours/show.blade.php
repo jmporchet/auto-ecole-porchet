@@ -1,0 +1,1 @@
+/var/www/webapp/app/views/cours/show.blade.php
