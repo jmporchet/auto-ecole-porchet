@@ -52,8 +52,9 @@ class ClientsController extends \BaseController {
 	public function show($id)
 	{
 		$client = Client::findOrFail($id);
+        $lecons = Lecon::where('client_id','=',$client->id)->get();
 
-		return View::make('clients.show', compact('client'));
+		return View::make('clients.show', compact('client', 'lecons'));
 	}
 
 	/**

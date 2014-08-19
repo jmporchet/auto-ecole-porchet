@@ -1,6 +1,6 @@
 <?php
 
-class Client extends \Eloquent {
+class Lecon extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
@@ -11,9 +11,11 @@ class Client extends \Eloquent {
 	//protected $fillable = [];
     protected $guarded = [];
 
-    public function lecons()
+    protected $table = 'cours';
+
+    public function client()
     {
-        return $this->hasMany('Lecon');
+        return $this->belongsTo('Client');
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
-
 Route::resource('clients', 'ClientsController');
 Route::resource('adresses', 'AdressesController');
-Route::resource('cours', 'CoursController');
+Route::get('lecons/create/{user_id}', 'LeconsController@create');
+Route::resource('lecons', 'LeconsController');
 Route::resource('paiements', 'PaiementsController');

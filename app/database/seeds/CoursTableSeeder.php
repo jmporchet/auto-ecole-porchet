@@ -11,7 +11,7 @@ class CoursTableSeeder extends Seeder {
 
 		foreach(range(1, 10) as $index)
 		{
-			Cour::create([
+			Lecon::create([
 
 			]);
 		}
