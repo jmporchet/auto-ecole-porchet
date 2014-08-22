@@ -99,7 +99,7 @@ class ExamPathsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Exampath::destroy($id);
+		ExamPath::destroy($id);
 
 		return Redirect::route('exampaths.index');
 	}

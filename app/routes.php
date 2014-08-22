@@ -4,4 +4,4 @@ Route::resource('adresses', 'AdressesController');
 Route::get('lecons/create/{user_id}', 'LeconsController@create');
 Route::resource('lecons', 'LeconsController');
 Route::resource('paiements', 'PaiementsController');
-Route::resource('ExamPaths', 'ExamPathsController');
+Route::resource('exampaths', 'ExamPathsController');

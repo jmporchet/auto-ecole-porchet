@@ -1,6 +1,6 @@
 @extends('_partials/master')
 @section('content')
-Ajouter une leçon pour {{ $client->prenom }}
+<h1>Ajouter une leçon pour {{ $client->prenom }}</h1>
 {{ Form::open([
 'route' => ['lecons.store' ],
 'method' => 'post'
