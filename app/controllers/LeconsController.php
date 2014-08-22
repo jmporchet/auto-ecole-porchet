@@ -40,7 +40,7 @@ class LeconsController extends \BaseController {
 
 		lecon::create($data);
 
-		return Redirect::route('lecons.index');
+		return Redirect::to('clients/'.$data["client_id"]);
 	}
 
 	/**
