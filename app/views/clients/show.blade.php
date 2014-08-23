@@ -7,9 +7,11 @@
 @endforeach
 
 <h2>Envoyer un parcours d'examen</h2>
-{{ Form::open(['route' => 'clients.store']) }}
+{{ Form::open(['route' => 'sendexam']) }}
+{{ Form::hidden('client_id', $client->id) }}
 @foreach ($exampaths as $ep)
-{{Form::checkbox('exampath_id', $ep->id) }} {{ $ep->nom }}<br>
+{{Form::checkbox('exampath_id[]', $ep->id) }} {{ $ep->nom }}<br>
 @endforeach
+{{ Form::submit() }}
 {{ Form::close() }}
 @stop
