@@ -1,14 +1,14 @@
 @extends('_partials.master')
 @section('content')
 
-Bonjour {{ $prenom }},
+<h2>Bonjour {{ $prenom }},</h2>
 
-Voici le trajet que nous avons fait aujourd'hui.
+<p>Voici le trajet (ou une variation) que nous avons fait aujourd'hui.</p>
 @foreach ($exampaths as $exam)
     <a href="{{ $exam['url'] }}">{{ $exam['nom'] }}</a><br>
 @endforeach
 
-Bonne route,
-
-Jean-Marie Porchet auto-école
+<p>Bonne route,
+<br>
+Jean-Marie Porchet auto-école</p>
 @stop

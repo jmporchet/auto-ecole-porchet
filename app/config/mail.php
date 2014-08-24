@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'log',
+	'driver' => 'mandrill',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'porchetautoecole@gmail.com', 'name' => 'Jean-Marie Porchet Auto-école'),
+	'from' => array('address' => 'jm@jmporchet.ch', 'name' => 'Jean-Marie Porchet Auto-école'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'jm@jmporchet.ch',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'kFFfiKxQVPyZc8Yuim7m-A',
 
 	/*
 	|--------------------------------------------------------------------------
