@@ -1,11 +1,19 @@
 
 @extends('_partials/master')
 @section('content')
-<table>
+<h1>Liste des clients <small><a href="{{ route('clients.create') }}" class="btn btn-success">nouveau client</a></small></h1>
+<table class="table">
+    <thead>
+        <th>Nom</th>
+        <th>Dernière fois</th>
+        <th><i class="glyphicon-cog glyphicon"></i> Action</th>
+    </thead>
 @foreach ($clients as $client)
     <tr>
-        <td>{{ $client->prenom }}</td>
-        <td><a href="{{ url('lecons/create', $client->id) }}">ajouter cours</a> </td>
+        <td><a href=" {{ route('clients.show', $client->id) }}">{{ $client->prenom }} {{ $client->nom }}</a></td>
+        <td>{{ $client->lecons->last()->contenu  }}
+            </td>
+        <td><a href="{{ url('lecons/create', $client->id) }}">ajouter cours</a></td>
     </tr>
 @endforeach
     </table>

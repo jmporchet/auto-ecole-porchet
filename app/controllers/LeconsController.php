@@ -65,8 +65,9 @@ class LeconsController extends \BaseController {
 	public function edit($id)
 	{
 		$lecon = lecon::find($id);
+        $client = Client::find($lecon->client_id);
 
-		return View::make('lecons.edit', compact('lecon'));
+		return View::make('lecons.edit', compact('lecon', 'client'));
 	}
 
 	/**
@@ -88,7 +89,7 @@ class LeconsController extends \BaseController {
 
 		$lecon->update($data);
 
-		return Redirect::route('lecons.index');
+		return Redirect::route('clients.show', $lecon->client_id);
 	}
 
 	/**
@@ -99,9 +100,10 @@ class LeconsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
+        $lecon = Lecon::findOrFail($id);
 		lecon::destroy($id);
 
-		return Redirect::route('lecons.index');
+		return Redirect::route('clients.show', $lecon->client_id);
 	}
 
 }

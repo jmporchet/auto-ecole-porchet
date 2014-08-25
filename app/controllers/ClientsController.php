@@ -9,10 +9,21 @@ class ClientsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$clients = Client::all();
+		$clients = Client::with(array(
+            'lecons' => function ($query) {
+                    $query->orderBy('date', 'asc');
+                }
+        ))->orderBy('prenom', 'asc')->get();
 
 		return View::make('clients.index', compact('clients'));
 	}
+
+    public function listActive()
+    {
+        $clients = Client::where('status', '=', 'courants');
+
+        return View::make('clients.index', compact('clients'));
+    }
 
 	/**
 	 * Show the form for creating a new client
@@ -52,7 +63,7 @@ class ClientsController extends \BaseController {
 	public function show($id)
 	{
 		$client = Client::findOrFail($id);
-        $lecons = Lecon::where('client_id','=',$client->id)->get();
+        $lecons = Lecon::where('client_id','=',$client->id)->orderBy('date', 'desc')->get();
         $exampaths = ExamPath::all();
 
 		return View::make('clients.show', compact('client', 'lecons', 'exampaths'));
