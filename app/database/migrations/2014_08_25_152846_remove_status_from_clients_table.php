@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddStatusToClientsTable extends Migration {
+class RemoveStatusFromClientsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,7 +14,7 @@ class AddStatusToClientsTable extends Migration {
 	{
 		Schema::table('clients', function(Blueprint $table)
 		{
-			$table->enum('status', ['courants', 'archivés', 'réussis'])->after('trouve_comment')->default('courants');
+			$table->removeColumn('status');
 		});
 	}
 
@@ -28,7 +28,6 @@ class AddStatusToClientsTable extends Migration {
 	{
 		Schema::table('clients', function(Blueprint $table)
 		{
-			$table->dropColumn('status');
 		});
 	}
 
