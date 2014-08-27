@@ -14,7 +14,7 @@ class RemoveStatusFromClientsTable extends Migration {
 	{
 		Schema::table('clients', function(Blueprint $table)
 		{
-			$table->removeColumn('status');
+			$table->dropColumn('status');
 		});
 	}
 

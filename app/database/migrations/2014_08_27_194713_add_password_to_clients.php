@@ -15,6 +15,7 @@ class AddPasswordToClients extends Migration {
 		Schema::table('clients', function(Blueprint $table)
 		{
 			$table->string('password', 64)->after('email');
+            $table->string('remember_token', 100)->nullable()->after('password');
 		});
 	}
 
@@ -28,7 +29,8 @@ class AddPasswordToClients extends Migration {
 	{
 		Schema::table('clients', function(Blueprint $table)
 		{
-			$table->removeColumn('password');
+			$table->dropColumn('password');
+            $table->dropColumn('remember_token');
 		});
 	}
 

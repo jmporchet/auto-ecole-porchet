@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b7ee01-4ca7-435e-9899-ed015b8ba82e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/clients/anniversaires.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pages/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_08_04_200014_create_clients_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_08_04_200014_create_clients_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ClientsController.php" afterPath="$PROJECT_DIR$/app/controllers/ClientsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/clients/create.blade.php" afterPath="$PROJECT_DIR$/app/views/clients/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/clients/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/clients/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/lecons/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/lecons/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/clients/_partials/form.blade.php" afterPath="$PROJECT_DIR$/app/views/clients/_partials/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/clients/index.blade.php" afterPath="$PROJECT_DIR$/app/views/clients/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/_partials/master.blade.php" afterPath="$PROJECT_DIR$/app/views/_partials/master.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/clients/show.blade.php" afterPath="$PROJECT_DIR$/app/views/clients/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webapp.iws" />
@@ -41,10 +31,10 @@
         <splitter split-orientation="vertical" split-proportion="0.53835976">
           <split-first>
             <leaf>
-              <file leaf-file-name="2014_08_27_194713_add_password_to_clients.php" pinned="false" current="true" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php">
+              <file leaf-file-name="2014_08_25_152846_remove_status_from_clients_table.php" pinned="false" current="true" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="16" column="57" selection-start="330" selection-end="330" vertical-scroll-proportion="0.089108914" vertical-offset="309" max-vertical-offset="920">
+                    <state line="16" column="24" selection-start="305" selection-end="305" vertical-scroll-proportion="0.740099" vertical-offset="46" max-vertical-offset="897">
                       <folding />
                     </state>
                   </provider>
@@ -123,7 +113,6 @@
         <option value="$PROJECT_DIR$/app/controllers/LeconsController.php" />
         <option value="$PROJECT_DIR$/app/views/lecons/create.blade.php" />
         <option value="$PROJECT_DIR$/app/views/lecons/_partials/form.blade.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_24_011839_add_status_to_clients_table.php" />
         <option value="$PROJECT_DIR$/app/views/clients/show.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/index.blade.php" />
@@ -142,6 +131,7 @@
         <option value="$PROJECT_DIR$/app/views/clients/create.blade.php" />
         <option value="$PROJECT_DIR$/app/storage/logs/laravel.log" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php" />
       </list>
     </option>
   </component>
@@ -658,7 +648,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistory" value="add:&#10;add_pa&#10;form&#10;edit&#10;create&#10;rou&#10;annive&#10;show&#10;index&#10;routes&#10;master&#10;add&#10;remove_st&#10;remove&#10;lecon&#10;client.&#10;cre&#10;clie&#10;log&#10;live temp&#10;route&#10;exampathsende&#10;exampa&#10;Lecons&#10;inde&#10;client&#10;store&#10;live&#10;live t&#10;cour.php&#10;cours&#10;Clients.&#10;index.bla&#10;compo&#10;keymap&#10;fonts&#10;reformat&#10;live templ&#10;file templates" />
+    <property name="SearchEverywhereHistory" value="table&#10;add:&#10;add_pa&#10;form&#10;edit&#10;create&#10;rou&#10;annive&#10;show&#10;index&#10;routes&#10;master&#10;add&#10;remove_st&#10;remove&#10;lecon&#10;client.&#10;cre&#10;clie&#10;log&#10;live temp&#10;route&#10;exampathsende&#10;exampa&#10;Lecons&#10;inde&#10;client&#10;store&#10;live&#10;live t&#10;cour.php&#10;cours&#10;Clients.&#10;index.bla&#10;compo&#10;keymap&#10;fonts&#10;reformat&#10;live templ&#10;file templates" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="/usr/local/php5/bin" />
@@ -756,11 +746,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_04_201409_create_adresses_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="33" selection-start="458" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="690" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_04_202708_create_cours_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="33" selection-start="498" selection-end="628" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="705" />
@@ -928,29 +913,18 @@
         <state line="25" column="0" selection-start="458" selection-end="458" vertical-scroll-proportion="1.4232674" vertical-offset="0" max-vertical-offset="2645" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="9" selection-start="479" selection-end="479" vertical-scroll-proportion="0.6627566" vertical-offset="418" max-vertical-offset="897" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_24_011839_add_status_to_clients_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="111" selection-start="387" selection-end="387" vertical-scroll-proportion="0.32551318" vertical-offset="234" max-vertical-offset="920" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="37" selection-start="469" selection-end="491" vertical-scroll-proportion="0.50914633" vertical-offset="109" max-vertical-offset="1219" />
+        <state line="12" column="37" selection-start="469" selection-end="491" vertical-scroll-proportion="0.50914633" vertical-offset="109" max-vertical-offset="1219">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="5" selection-start="824" selection-end="824" vertical-scroll-proportion="0.8993902" vertical-offset="211" max-vertical-offset="644" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_04_200014_create_clients_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="50" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.47214076" vertical-offset="621" max-vertical-offset="1357" />
+        <state line="22" column="5" selection-start="824" selection-end="824" vertical-scroll-proportion="0.8993902" vertical-offset="211" max-vertical-offset="644">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/_partials/master.blade.php">
@@ -970,7 +944,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/anniversaires.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="9" selection-start="500" selection-end="500" vertical-scroll-proportion="0.63109756" vertical-offset="69" max-vertical-offset="483" />
+        <state line="12" column="9" selection-start="500" selection-end="500" vertical-scroll-proportion="0.63109756" vertical-offset="69" max-vertical-offset="483">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
@@ -1025,7 +1001,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="57" selection-start="330" selection-end="330" vertical-scroll-proportion="0.089108914" vertical-offset="309" max-vertical-offset="920">
+        <state line="32" column="49" selection-start="654" selection-end="654" vertical-scroll-proportion="0.8861386" vertical-offset="355" max-vertical-offset="966">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_04_201409_create_adresses_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="33" selection-start="458" selection-end="588" vertical-scroll-proportion="-0.42326733" vertical-offset="631" max-vertical-offset="1035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_24_011839_add_status_to_clients_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="111" selection-start="387" selection-end="387" vertical-scroll-proportion="0.27475247" vertical-offset="234" max-vertical-offset="920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_04_200014_create_clients_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="50" selection-start="1119" selection-end="1119" vertical-scroll-proportion="-0.42326733" vertical-offset="953" max-vertical-offset="1357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="24" selection-start="305" selection-end="305" vertical-scroll-proportion="0.740099" vertical-offset="46" max-vertical-offset="897">
           <folding />
         </state>
       </provider>
