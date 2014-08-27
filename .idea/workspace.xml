@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b7ee01-4ca7-435e-9899-ed015b8ba82e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/ClientsTableSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/ClientsTableSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webapp.iws" />
@@ -31,10 +33,10 @@
         <splitter split-orientation="vertical" split-proportion="0.53835976">
           <split-first>
             <leaf>
-              <file leaf-file-name="2014_08_25_152846_remove_status_from_clients_table.php" pinned="false" current="true" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php">
+              <file leaf-file-name="DatabaseSeeder.php" pinned="false" current="true" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="16" column="24" selection-start="305" selection-end="305" vertical-scroll-proportion="0.740099" vertical-offset="46" max-vertical-offset="897">
+                    <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
                       <folding />
                     </state>
                   </provider>
@@ -62,7 +64,7 @@
           <file leaf-file-name="laravel.log" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/storage/logs/laravel.log">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2300">
+                <state line="94" column="0" selection-start="16168" selection-end="16168" vertical-scroll-proportion="0.0" vertical-offset="2162" max-vertical-offset="4462">
                   <folding />
                 </state>
               </provider>
@@ -83,7 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/config/database.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_04_201409_create_adresses_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_04_202708_create_cours_table.php" />
@@ -107,7 +108,6 @@
         <option value="$PROJECT_DIR$/app/start/global.php" />
         <option value="$PROJECT_DIR$/app/controllers/ExamPathSender.php" />
         <option value="$PROJECT_DIR$/app/config/mail.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/services.php" />
         <option value="$PROJECT_DIR$/app/views/emails/exampath.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/LeconsController.php" />
@@ -132,6 +132,8 @@
         <option value="$PROJECT_DIR$/app/storage/logs/laravel.log" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/config/app.php" />
       </list>
     </option>
   </component>
@@ -596,6 +598,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="seeds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -648,7 +672,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistory" value="table&#10;add:&#10;add_pa&#10;form&#10;edit&#10;create&#10;rou&#10;annive&#10;show&#10;index&#10;routes&#10;master&#10;add&#10;remove_st&#10;remove&#10;lecon&#10;client.&#10;cre&#10;clie&#10;log&#10;live temp&#10;route&#10;exampathsende&#10;exampa&#10;Lecons&#10;inde&#10;client&#10;store&#10;live&#10;live t&#10;cour.php&#10;cours&#10;Clients.&#10;index.bla&#10;compo&#10;keymap&#10;fonts&#10;reformat&#10;live templ&#10;file templates" />
+    <property name="SearchEverywhereHistory" value="app.&#10;json&#10;table&#10;add:&#10;add_pa&#10;form&#10;edit&#10;create&#10;rou&#10;annive&#10;show&#10;index&#10;routes&#10;master&#10;add&#10;remove_st&#10;remove&#10;lecon&#10;client.&#10;cre&#10;clie&#10;log&#10;live temp&#10;route&#10;exampathsende&#10;exampa&#10;Lecons&#10;inde&#10;client&#10;store&#10;live&#10;live t&#10;cour.php&#10;cours&#10;Clients.&#10;index.bla&#10;compo&#10;keymap&#10;fonts&#10;reformat&#10;live templ&#10;file templates" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="/usr/local/php5/bin" />
@@ -714,7 +738,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -746,21 +770,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_04_202708_create_cours_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="33" selection-start="498" selection-end="628" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="705" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="20" selection-start="4194" selection-end="4194" vertical-scroll-proportion="0.0" vertical-offset="4347" max-vertical-offset="22448" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdressesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.09139073" vertical-offset="0" max-vertical-offset="2599" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/lecons/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100" />
@@ -799,11 +808,6 @@
     <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="32" selection-start="1820" selection-end="1820" vertical-scroll-proportion="0.43396226" vertical-offset="1035" max-vertical-offset="2990" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="19" selection-start="1736" selection-end="1736" vertical-scroll-proportion="-3.5566037" vertical-offset="3881" max-vertical-offset="4623" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/start/global.php">
@@ -859,11 +863,6 @@
     <entry file="file://$PROJECT_DIR$/app/config/session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="123" column="0" selection-start="3618" selection-end="4028" vertical-scroll-proportion="0.38297874" vertical-offset="2685" max-vertical-offset="3358" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="9" selection-start="497" selection-end="497" vertical-scroll-proportion="0.6509434" vertical-offset="0" max-vertical-offset="1081" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/services.php">
@@ -987,7 +986,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="729">
+        <state line="94" column="0" selection-start="16168" selection-end="16168" vertical-scroll-proportion="0.0" vertical-offset="2162" max-vertical-offset="4462">
           <folding />
         </state>
       </provider>
@@ -999,23 +998,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="49" selection-start="654" selection-end="654" vertical-scroll-proportion="0.8861386" vertical-offset="355" max-vertical-offset="966">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_04_201409_create_adresses_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="33" selection-start="458" selection-end="588" vertical-scroll-proportion="-0.42326733" vertical-offset="631" max-vertical-offset="1035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_24_011839_add_status_to_clients_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="111" selection-start="387" selection-end="387" vertical-scroll-proportion="0.27475247" vertical-offset="234" max-vertical-offset="920">
           <folding />
         </state>
       </provider>
@@ -1027,9 +1012,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="49" selection-start="654" selection-end="654" vertical-scroll-proportion="0.8861386" vertical-offset="355" max-vertical-offset="966">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="24" selection-start="305" selection-end="305" vertical-scroll-proportion="0.740099" vertical-offset="46" max-vertical-offset="897">
+        <state line="16" column="24" selection-start="305" selection-end="305" vertical-scroll-proportion="-0.17079207" vertical-offset="414" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_24_011839_add_status_to_clients_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="111" selection-start="387" selection-end="387" vertical-scroll-proportion="0.04859335" vertical-offset="326" max-vertical-offset="920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_20_053106_create_ExamPaths_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.2772278" vertical-offset="516" max-vertical-offset="920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="36" selection-start="254" selection-end="254" vertical-scroll-proportion="0.45544556" vertical-offset="0" max-vertical-offset="1104">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="51" selection-start="4405" selection-end="4454" vertical-scroll-proportion="0.60148513" vertical-offset="2586" max-vertical-offset="4623">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/ClientsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="80937">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
           <folding />
         </state>
       </provider>
