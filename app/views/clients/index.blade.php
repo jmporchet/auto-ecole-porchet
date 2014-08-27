@@ -11,9 +11,15 @@
 @foreach ($clients as $client)
     <tr>
         <td><a href=" {{ route('clients.show', $client->id) }}">{{ $client->prenom }} {{ $client->nom }}</a></td>
-        <td>{{ $client->lecons->last()->contenu  }}
+        <td>
+            @if (isset($client->lecons->last()->contenu))
+                {{ date('d.m', strtotime($client->lecons->last()->date)) }} {{ $client->lecons->last()->contenu }}
+            @endif
             </td>
-        <td><a href="{{ url('lecons/create', $client->id) }}">ajouter cours</a></td>
+        <td>
+            <a href="{{ url('lecons/create', $client->id) }}" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus-sign"></i> cours</a>
+            <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> editer</a>
+        </td>
     </tr>
 @endforeach
     </table>

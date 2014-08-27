@@ -30,7 +30,7 @@ class CreateClientsTable extends Migration {
             $table->enum('frein', [1,2,3,4,5]);
             $table->enum('boite', [1,2,3,4,5]);
             $table->enum('embrayage', [1,2,3,4,5]);
-            $table->enum('RTI', [1,2,3,4,5]);
+            $table->enum('rti', [1,2,3,4,5]);
             $table->enum('priorites', [1,2,3,4,5]);
             $table->enum('approche', [1,2,3,4,5]);
             $table->enum('decision', [1,2,3,4,5]);

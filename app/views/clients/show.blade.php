@@ -1,6 +1,5 @@
 @extends('_partials/master')
 @section('content')
-<h5><a href="{{ route('clients.index') }}">retour aux clients</a></h5>
 <h1>Les leçons de {{ $client->prenom }} <small><a href="{{ url('lecons/create/'.$client->id) }}" class="btn btn-success">nouvelle leçon</a></small></h1>
 <table class="table table-responsive">
     <thead>

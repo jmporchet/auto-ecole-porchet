@@ -1,10 +1,11 @@
 @extends('_partials.master')
 
 @section('content')
-<h1>Create client</h1>
+<h1>Nouveau client</h1>
 {{ Form::open([
     'route' => ['clients.store' ],
-    'method' => 'post'
+    'method' => 'post',
+    'class' => 'form-horizontal'
 ]) }}
 @include('clients._partials.form')
 {{ Form::close() }}

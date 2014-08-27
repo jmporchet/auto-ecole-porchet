@@ -11,19 +11,15 @@ class ClientsController extends \BaseController {
 	{
 		$clients = Client::with(array(
             'lecons' => function ($query) {
-                    $query->orderBy('date', 'asc');
-                }
-        ))->orderBy('prenom', 'asc')->get();
+                $query->orderBy('date', 'asc');
+            }
+        ))
+            ->where('status','=','courants')
+            ->orderBy('prenom', 'asc')
+            ->get();
 
 		return View::make('clients.index', compact('clients'));
 	}
-
-    public function listActive()
-    {
-        $clients = Client::where('status', '=', 'courants');
-
-        return View::make('clients.index', compact('clients'));
-    }
 
 	/**
 	 * Show the form for creating a new client
@@ -116,5 +112,34 @@ class ClientsController extends \BaseController {
 
 		return Redirect::route('clients.index');
 	}
+
+    public function old()
+    {
+        $clients = Client::with(array(
+            'lecons' => function ($query) {
+                    $query->orderBy('date', 'asc');
+                }
+        ))
+            ->where('status','!=','courants')
+            ->orderBy('prenom', 'asc')
+            ->get();
+
+        return View::make('clients.index', compact('clients'));
+    }
+
+    public function anniversaires()
+    {
+        $anniversaires = Client::orderByRaw('MONTH(date_naissance), DAY(date_naissance)')->get();
+        return View::make('clients.anniversaires', compact('anniversaires'));
+    }
+
+    public function archiver($id)
+    {
+        $client = Client::findOrFail($id);
+        $client->status = "réussis";
+        $client->save();
+
+        return Redirect::route('clients.index');
+    }
 
 }
