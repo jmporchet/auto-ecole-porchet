@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'webapp',
-			'username'  => 'root',
-			'password'  => 'root',
+			'host'      => 'mysql.auto-ecole-porchet.ch',
+			'database'  => 'autoecoleporchetch1',
+			'username'  => 'porchet321',
+			'password'  => 'ty-veno-sho-nub',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

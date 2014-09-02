@@ -7,7 +7,8 @@
         "laravel/framework": "4.2.*",
         "way/generators": "2.*",
         "guzzlehttp/guzzle": "~4.0",
-        "orangehill/iseed": "dev-master"
+        "orangehill/iseed": "dev-master",
+        "fadion/maneuver": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "4.0"

@@ -124,6 +124,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Orangehill\Iseed\IseedServiceProvider',
         'Acme\Repositories\BackendServiceProvider',
+        'Fadion\Maneuver\ManeuverServiceProvider',
 	),
 
 	/*
