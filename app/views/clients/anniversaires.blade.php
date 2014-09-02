@@ -1,6 +1,6 @@
 @extends('_partials/master')
 @section('content')
-<h1>Anniversaires des clients <small><a href="{{ route('clients.create') }}" class="btn btn-success">nouveau client</a></small></h1>
+<h1>Anniversaires des clients</h1>
 <table class="table">
     <thead>
     <th width="20%">Date</th>

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class RemoveStatusFromClientsTable extends Migration {
+class CreatePagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,10 @@ class RemoveStatusFromClientsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('clients', function(Blueprint $table)
+		Schema::create('pages', function(Blueprint $table)
 		{
-			$table->removeColumn('status');
+			$table->increments('id');
+			$table->timestamps();
 		});
 	}
 
@@ -26,9 +27,7 @@ class RemoveStatusFromClientsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('clients', function(Blueprint $table)
-		{
-		});
+		Schema::drop('pages');
 	}
 
 }

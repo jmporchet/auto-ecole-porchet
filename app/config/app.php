@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Orangehill\Iseed\IseedServiceProvider',
+        'Acme\Repositories\BackendServiceProvider',
 	),
 
 	/*

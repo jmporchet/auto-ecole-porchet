@@ -53,5 +53,5 @@
     </div>
 </div>
 <div class="form-group">
-    {{ Form::submit('Créer', ['class' => 'form-control btn btn-success']) }}
+    {{ Form::submit('Envoyer', ['class' => 'form-control btn btn-success']) }}
 </div>

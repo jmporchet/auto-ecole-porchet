@@ -1,6 +1,16 @@
 <?php
+use Acme\Repositories\ClientRepositoryInterface;
+use Acme\Repositories\LeconRepositoryInterface;
 
 class ClientsController extends \BaseController {
+
+    protected $client;
+
+    public function __construct(ClientRepositoryInterface $client, LeconRepositoryInterface $lecon)
+    {
+        $this->client = $client;
+        $this->lecon = $lecon;
+    }
 
 	/**
 	 * Display a listing of clients
@@ -9,14 +19,7 @@ class ClientsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$clients = Client::with(array(
-            'lecons' => function ($query) {
-                $query->orderBy('date', 'asc');
-            }
-        ))
-            ->where('status','=','courants')
-            ->orderBy('prenom', 'asc')
-            ->get();
+		$clients = $this->client->getCurrentClients();
 
 		return View::make('clients.index', compact('clients'));
 	}
@@ -58,8 +61,9 @@ class ClientsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$client = Client::findOrFail($id);
-        $lecons = Lecon::where('client_id','=',$client->id)->orderBy('date', 'desc')->get();
+        /* Select c.contenu, c.heures from cours as c, eleves_cours as ec, table_eleves as e where e.prenom LIKE "%galyna%" and e.client_uid= ec.client_uid and c.cours_uid = ec.cours_uid; */
+		$client = $this->client->find($id);
+        $lecons = $this->lecon->byClient($client->id);
         $exampaths = ExamPath::all();
 
 		return View::make('clients.show', compact('client', 'lecons', 'exampaths'));
@@ -73,7 +77,7 @@ class ClientsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$client = Client::find($id);
+		$client = $this->client->find($id);
 
 		return View::make('clients.edit', compact('client'));
 	}
@@ -86,7 +90,7 @@ class ClientsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$client = Client::findOrFail($id);
+		$client = $this->client->find($id);
 
 		$validator = Validator::make($data = Input::all(), Client::$rules);
 
@@ -115,29 +119,27 @@ class ClientsController extends \BaseController {
 
     public function old()
     {
-        $clients = Client::with(array(
-            'lecons' => function ($query) {
-                    $query->orderBy('date', 'asc');
-                }
-        ))
-            ->where('status','!=','courants')
-            ->orderBy('prenom', 'asc')
-            ->get();
+        $clients = $this->client->getOldClients();
 
         return View::make('clients.index', compact('clients'));
     }
 
     public function anniversaires()
     {
-        $anniversaires = Client::orderByRaw('MONTH(date_naissance), DAY(date_naissance)')->get();
+        $anniversaires = $this->client->getAnniversaires();
         return View::make('clients.anniversaires', compact('anniversaires'));
     }
 
     public function archiver($id)
     {
-        $client = Client::findOrFail($id);
-        $client->status = "réussis";
-        $client->save();
+        $this->client->archiver($id);
+
+        return Redirect::route('clients.index');
+    }
+
+    public function desarchiver($id)
+    {
+        $this->client->desarchiver($id);
 
         return Redirect::route('clients.index');
     }

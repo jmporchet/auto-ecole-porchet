@@ -1,5 +1,6 @@
 @extends('_partials/master')
 @section('content')
+{{ $client->telephone }}<br>
 <h1>Les leçons de {{ $client->prenom }} <small><a href="{{ url('lecons/create/'.$client->id) }}" class="btn btn-success">nouvelle leçon</a></small></h1>
 <table class="table table-responsive">
     <thead>
