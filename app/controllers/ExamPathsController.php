@@ -9,7 +9,7 @@ class ExamPathsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$exampaths = Exampath::all();
+		$exampaths = ExamPath::all();
 
 		return View::make('exampaths.index', compact('exampaths'));
 	}
@@ -31,14 +31,14 @@ class ExamPathsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Exampath::$rules);
+		$validator = Validator::make($data = Input::all(), ExamPath::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Exampath::create($data);
+		ExamPath::create($data);
 
 		return Redirect::route('exampaths.index');
 	}
@@ -51,7 +51,7 @@ class ExamPathsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$exampath = Exampath::findOrFail($id);
+		$exampath = ExamPath::findOrFail($id);
 
 		return View::make('exampaths.show', compact('exampath'));
 	}
@@ -64,7 +64,7 @@ class ExamPathsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$exampath = Exampath::find($id);
+		$exampath = ExamPath::find($id);
 
 		return View::make('exampaths.edit', compact('exampath'));
 	}
@@ -77,7 +77,7 @@ class ExamPathsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$exampath = Exampath::findOrFail($id);
+		$exampath = ExamPath::findOrFail($id);
 
 		$validator = Validator::make($data = Input::all(), Exampath::$rules);
 
