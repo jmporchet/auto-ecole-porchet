@@ -13,7 +13,7 @@ class Client extends \Eloquent {
 
     public function lecons()
     {
-        return $this->hasMany('Lecon');
+        return $this->hasMany('Lecon', 'client_uid');
     }
 
 }

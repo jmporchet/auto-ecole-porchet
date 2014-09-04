@@ -20,9 +20,6 @@ class CreateAdressesTable extends Migration {
 			$table->integer('npa');
 			$table->string('ville');
 			$table->timestamps();
-            $table->foreign('client_id')
-                ->references('id')->on('clients')
-                ->onDelete('cascade');
 		});
 	}
 

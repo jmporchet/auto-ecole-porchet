@@ -20,9 +20,6 @@ class CreatePaiementsTable extends Migration {
 			$table->integer('montant');
 			$table->string('commentaire');
 			$table->timestamps();
-            $table->foreign('client_id')
-                ->references('id')->on('clients')
-                ->onDelete('cascade');
 		});
 	}
 

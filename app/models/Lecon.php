@@ -15,7 +15,7 @@ class Lecon extends \Eloquent {
 
     public function client()
     {
-        return $this->belongsTo('Client');
+        return $this->belongsTo('Client', 'uid');
     }
 
 }
