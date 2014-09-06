@@ -17,7 +17,7 @@
         <td>
             {{ Form::open(array('route' => array('lecons.destroy', $lecon->id), 'method' => 'delete', 'data-confirm' => 'Etes-vous sur ?')) }}
                 <a href="{{ url('lecons/'.$lecon->id.'/edit') }}" class="btn btn-primary">editer</a>
-                <button type="submit" href="{{ URL::route('lecons.destroy', $lecon->id) }}" class="btn btn-danger btn-mini">effacer</butfon>
+                <button type="submit" href="{{ URL::route('lecons.destroy', $lecon->id) }}" class="btn btn-danger btn-mini">effacer</button>
             {{ Form::close() }}
         </td>
     </tr>

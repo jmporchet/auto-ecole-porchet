@@ -22,7 +22,7 @@ class ClientsController extends \BaseController {
 		$clients = $this->client->getCurrentClients();
         $lecons = $this->lecon->all();
 
-		return View::make('clients.index', compact('clients', 'lecons'));
+		return View::make('clients.index', compact('clients', 'econs'));
 	}
 
 	/**
@@ -122,7 +122,7 @@ class ClientsController extends \BaseController {
     {
         $clients = $this->client->getOldClients();
 
-        return View::make('clients.index', compact('clients'));
+        return View::make('clients.old_clients', compact('clients'));
     }
 
     public function anniversaires()

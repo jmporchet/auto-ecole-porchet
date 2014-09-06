@@ -4,7 +4,7 @@
 <table class="table">
     <thead>
     <th>Nom</th>
-    <th>Dernière fois</th>
+    <th>Prochaine fois</th>
     <th><i class="glyphicon-cog glyphicon"></i> Action</th>
     </thead>
     @foreach ($clients as $client)
@@ -18,7 +18,6 @@
         <td>
             <a href="{{ url('lecons/create', $client->id) }}" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus-sign"></i> cours</a>
             <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> editer</a>
-            <a href="{{ route('clients.archiver', $client->id) }}" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-pencil"></i> archiver</a>
         </td>
     </tr>
     @endforeach
