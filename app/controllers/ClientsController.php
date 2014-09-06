@@ -20,8 +20,9 @@ class ClientsController extends \BaseController {
 	public function index()
 	{
 		$clients = $this->client->getCurrentClients();
+        $lecons = $this->lecon->all();
 
-		return View::make('clients.index', compact('clients'));
+		return View::make('clients.index', compact('clients', 'lecons'));
 	}
 
 	/**

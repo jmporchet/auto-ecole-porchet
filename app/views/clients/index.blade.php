@@ -11,8 +11,8 @@
     <tr>
         <td><a href=" {{ route('clients.show', $client->id) }}">{{ $client->prenom }} {{ $client->nom }}</a></td>
         <td>
-            @if (isset($client->contenu))
-             {{ $client->contenu }}
+            @if (isset($client->prochaine_fois))
+             {{ $client->prochaine_fois }}
             @endif
         </td>
         <td>

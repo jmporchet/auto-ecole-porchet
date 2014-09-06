@@ -11,11 +11,9 @@ class Lecon extends \Eloquent {
 	//protected $fillable = [];
     protected $guarded = [];
 
-    protected $table = 'cours';
-
     public function client()
     {
-        return $this->belongsTo('Client', 'uid');
+        return $this->belongsTo('Client');
     }
 
 }

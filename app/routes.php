@@ -1,6 +1,7 @@
 <?php
 
-App::bind('Acme\Repositories\ClientRepositoryInterface', 'Acme\Repositories\DbClientRepository');
+//App::bind('Acme\Repositories\ClientRepositoryInterface', 'Acme\Repositories\DbClientRepository');
+Route::get('/', 'ClientsController@index');
 
 Route::get('clients/old', ['as'=> 'clients.old', 'uses' => 'ClientsController@old']);
 Route::get('clients/anniversaires', ['as'=> 'clients.anniversaires', 'uses' => 'ClientsController@anniversaires']);

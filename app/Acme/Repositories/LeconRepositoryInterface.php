@@ -3,4 +3,5 @@
 interface LeconRepositoryInterface
 {
     public function byClient($id);
+    public function all();
 }

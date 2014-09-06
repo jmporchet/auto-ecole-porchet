@@ -38,7 +38,7 @@ class LeconsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		lecon::create($data);
+		Lecon::create($data);
 
 		return Redirect::to('clients/'.$data["client_id"]);
 	}
@@ -51,7 +51,7 @@ class LeconsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$lecon = lecon::findOrFail($id);
+		$lecon = Lecon::findOrFail($id);
 
 		return View::make('lecons.show', compact('lecon'));
 	}
@@ -64,8 +64,8 @@ class LeconsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$lecon = lecon::find($id);
-        $client = Client::find($lecon->client_id);
+		$lecon = Lecon::find($id);
+        $client = Client::where('id', '=', $lecon->client_id)->first();
 
 		return View::make('lecons.edit', compact('lecon', 'client'));
 	}
@@ -101,7 +101,7 @@ class LeconsController extends \BaseController {
 	public function destroy($id)
 	{
         $lecon = Lecon::findOrFail($id);
-		lecon::destroy($id);
+		Lecon::destroy($id);
 
 		return Redirect::route('clients.show', $lecon->client_id);
 	}
