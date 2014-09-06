@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b7ee01-4ca7-435e-9899-ed015b8ba82e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_09_06_160142_remove_client_uid_from_cours_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_09_06_160354_add_client_id_from_cours_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_09_06_160435_remove_uid_from_clients_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_09_06_160930_rename_cours_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_09_06_163412_add_uid_to_lecons_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_09_06_205822_remove_type_examen_from_clients_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_09_06_210104_add_type_examen_to_clients_table.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/tests/functional/ClientControllerTest.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/testing/app.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/testing/database.php" />
