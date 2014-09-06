@@ -1,7 +1,6 @@
 @extends('_partials/master')
 @section('content')
 <h1>Liste des clients <small><a href="{{ route('clients.create') }}" class="btn btn-success">nouveau client</a></small></h1>
-<div class="table-responsive">
 <table class="table table-striped table-condensed">
     <thead>
     <th>Nom</th>
@@ -23,5 +22,4 @@
     </tr>
     @endforeach
 </table>
-</div>
 @stop
