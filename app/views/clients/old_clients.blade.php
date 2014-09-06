@@ -1,7 +1,7 @@
 @extends('_partials/master')
 @section('content')
 <h1>Liste des anciens clients <small><a href="{{ route('clients.create') }}" class="btn btn-success">nouveau client</a></small></h1>
-<table class="table">
+<table class="table table-striped">
     <thead>
     <th>Nom</th>
     <th><i class="glyphicon-cog glyphicon"></i> Action</th>
