@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b7ee01-4ca7-435e-9899-ed015b8ba82e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/clients/index.blade.php" afterPath="$PROJECT_DIR$/app/views/clients/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/clients/last_seen.blade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/clients/old_clients.blade.php" afterPath="$PROJECT_DIR$/app/views/clients/last_seen.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Acme/Repositories/ClientRepositoryInterface.php" afterPath="$PROJECT_DIR$/app/Acme/Repositories/ClientRepositoryInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ClientsController.php" afterPath="$PROJECT_DIR$/app/controllers/ClientsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Acme/Repositories/DbClientRepository.php" afterPath="$PROJECT_DIR$/app/Acme/Repositories/DbClientRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/_partials/master.blade.php" afterPath="$PROJECT_DIR$/app/views/_partials/master.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +36,16 @@
         <splitter split-orientation="vertical" split-proportion="0.53835976">
           <split-first>
             <leaf>
-              <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/views/clients/index.blade.php">
+              <file leaf-file-name="DbClientRepository.php" pinned="false" current="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/app/Acme/Repositories/DbClientRepository.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="2" column="124" selection-start="173" selection-end="173" vertical-scroll-proportion="0.11764706" vertical-offset="0" max-vertical-offset="690">
-                      <folding />
+                    <state line="35" column="62" selection-start="1152" selection-end="1152" vertical-scroll-proportion="0.64705884" vertical-offset="529" max-vertical-offset="1978">
+                      <folding>
+                        <marker date="1410129607000" expanded="true" signature="491:822" placeholder="SELECT clien..clients..." />
+                        <marker date="1410129607000" expanded="true" signature="662:749" placeholder="SELECT MAX(l..lecons..." />
+                        <marker date="1410129607000" expanded="true" signature="913:1352" placeholder="SELECT clien..clients..." />
+                        <marker date="1410129607000" expanded="true" signature="1119:1206" placeholder="SELECT MAX(l..lecons..." />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -42,10 +54,10 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/views/exampaths/index.blade.php">
+              <file leaf-file-name="last_seen.blade.php" pinned="false" current="true" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/app/views/clients/last_seen.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="3" column="33" selection-start="180" selection-end="180" vertical-scroll-proportion="0.21036585" vertical-offset="0" max-vertical-offset="460">
+                    <state line="14" column="76" selection-start="638" selection-end="638" vertical-scroll-proportion="0.6493902" vertical-offset="109" max-vertical-offset="736">
                       <folding />
                     </state>
                   </provider>
@@ -60,7 +72,7 @@
           <file leaf-file-name="laravel.log" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/storage/logs/laravel.log">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5791" column="8" selection-start="820740" selection-end="820740" vertical-scroll-proportion="0.4110512" vertical-offset="132888" max-vertical-offset="133630">
+                <state line="572" column="0" selection-start="78770" selection-end="78770" vertical-scroll-proportion="0.0" vertical-offset="13156" max-vertical-offset="14260">
                   <folding />
                 </state>
               </provider>
@@ -81,8 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_08_26_112828_remove_RTI_from_clients_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_08_04_200014_create_clients_table.php" />
         <option value="$PROJECT_DIR$/app/views/clients/create.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_27_194713_add_password_to_clients.php" />
         <option value="$PROJECT_DIR$/app/views/clients/anniversaires.blade.php" />
@@ -93,7 +103,6 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_25_152846_remove_status_from_clients_table.php" />
         <option value="$PROJECT_DIR$/app/Acme/Repositories/BackendServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/views/clients/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Acme/Repositories/ClientRepositoryInterface.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/config/packages/fadion/maneuver/config.php" />
@@ -106,11 +115,9 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_04_201409_create_adresses_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_04_072353_remove_foreign_key_from_paiements_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_08_04_203055_create_paiements_table.php" />
-        <option value="$PROJECT_DIR$/app/storage/logs/laravel.log" />
         <option value="$PROJECT_DIR$/app/Acme/Repositories/LeconRepositoryInterface.php" />
         <option value="$PROJECT_DIR$/app/models/Client.php" />
         <option value="$PROJECT_DIR$/app/views/lecons/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/bootstrap/start.php" />
         <option value="$PROJECT_DIR$/app/tests/functional/ClientControllerTest.php" />
         <option value="$PROJECT_DIR$/app/models/Lecon.php" />
@@ -123,15 +130,20 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_06_205652_change_type_examen_from_clients_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_06_205822_remove_type_examen_from_clients_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_09_06_210104_add_type_examen_to_clients_table.php" />
-        <option value="$PROJECT_DIR$/app/Acme/Repositories/DbClientRepository.php" />
         <option value="$PROJECT_DIR$/app/controllers/LeconsController.php" />
         <option value="$PROJECT_DIR$/app/Acme/Repositories/DbLeconRepository.php" />
-        <option value="$PROJECT_DIR$/app/controllers/ClientsController.php" />
         <option value="$PROJECT_DIR$/app/views/clients/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/_partials/master.blade.php" />
         <option value="$PROJECT_DIR$/app/views/exampaths/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/clients/old_clients.blade.php" />
         <option value="$PROJECT_DIR$/app/views/clients/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/storage/logs/laravel.log" />
+        <option value="$PROJECT_DIR$/app/views/clients/last_seen.php" />
+        <option value="$PROJECT_DIR$/app/Acme/Repositories/ClientRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ClientsController.php" />
+        <option value="$PROJECT_DIR$/app/views/_partials/master.blade.php" />
+        <option value="$PROJECT_DIR$/app/Acme/Repositories/DbClientRepository.php" />
+        <option value="$PROJECT_DIR$/app/views/clients/last_seen.blade.php" />
       </list>
     </option>
   </component>
@@ -674,7 +686,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistory" value="inde&#10;exampaths&#10;master&#10;show&#10;clientsc&#10;route&#10;index&#10;routes&#10;leconsc&#10;edit&#10;s&#10;da&#10;start.&#10;database&#10;database.&#10;/app/config/packages/f&#10;app.&#10;compo&#10;rou&#10;dbcli&#10;autoload_c&#10;table.&#10;form&#10;edi&#10;anni&#10;json&#10;table&#10;add:&#10;add_pa&#10;create&#10;annive&#10;add&#10;remove_st&#10;remove&#10;lecon&#10;client.&#10;cre&#10;clie&#10;log&#10;live temp&#10;exampathsende&#10;exampa&#10;Lecons&#10;client&#10;store&#10;live&#10;live t&#10;cour.php&#10;cours&#10;Clients." />
+    <property name="SearchEverywhereHistory" value="&#10;master&#10;routes&#10;cli&#10;repo&#10;contro&#10;inde&#10;exampaths&#10;show&#10;clientsc&#10;route&#10;index&#10;leconsc&#10;edit&#10;s&#10;da&#10;start.&#10;database&#10;database.&#10;/app/config/packages/f&#10;app.&#10;compo&#10;rou&#10;dbcli&#10;autoload_c&#10;table.&#10;form&#10;edi&#10;anni&#10;json&#10;table&#10;add:&#10;add_pa&#10;create&#10;annive&#10;add&#10;remove_st&#10;remove&#10;lecon&#10;client.&#10;cre&#10;clie&#10;log&#10;live temp&#10;exampathsende&#10;exampa&#10;Lecons&#10;client&#10;store&#10;live" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="/usr/local/php5/bin" />
@@ -781,19 +793,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/controllers/ClientsController.php</url>
-          <line>147</line>
+          <line>157</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/controllers/ClientsController.php</url>
+          <line>128</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="5" selection-start="231" selection-end="231" vertical-scroll-proportion="0.8539604" vertical-offset="0" max-vertical-offset="552" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/anniversaires.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="52" selection-start="242" selection-end="286" vertical-scroll-proportion="0.53958946" vertical-offset="46" max-vertical-offset="483" />
@@ -827,13 +839,6 @@
     <entry file="file://$PROJECT_DIR$/app/Acme/Repositories/BackendServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="40" selection-start="294" selection-end="294" vertical-scroll-proportion="0.39589444" vertical-offset="95" max-vertical-offset="529" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Acme/Repositories/ClientRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="23" selection-start="294" selection-end="294" vertical-scroll-proportion="0.62623763" vertical-offset="0" max-vertical-offset="414">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
@@ -898,16 +903,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/clients/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="10" selection-start="464" selection-end="464" vertical-scroll-proportion="0.49085367" vertical-offset="23" max-vertical-offset="575">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/storage/logs/laravel.log">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5791" column="8" selection-start="820740" selection-end="820740" vertical-scroll-proportion="0.4110512" vertical-offset="132888" max-vertical-offset="133630">
           <folding />
         </state>
       </provider>
@@ -1045,16 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Acme/Repositories/DbClientRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="1" selection-start="1729" selection-end="1729" vertical-scroll-proportion="0.54304636" vertical-offset="1262" max-vertical-offset="1564">
-          <folding>
-            <marker date="1410038855000" expanded="true" signature="-1:-1" placeholder="SELECT clien..clients..." />
-            <marker date="1410038855000" expanded="true" signature="-1:-1" placeholder="SELECT MAX(l..lecons..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/LeconsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="58" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.33333334" vertical-offset="1436" max-vertical-offset="2645">
@@ -1069,20 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="43" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ClientsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="46" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.4390244" vertical-offset="2685" max-vertical-offset="3496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="200" selection-start="249" selection-end="249" vertical-scroll-proportion="0.1402439" vertical-offset="0" max-vertical-offset="1242">
@@ -1090,30 +1061,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/_partials/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="69" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.5609756" vertical-offset="759" max-vertical-offset="1495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/exampaths/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="33" selection-start="180" selection-end="180" vertical-scroll-proportion="0.21036585" vertical-offset="0" max-vertical-offset="460">
+        <state line="3" column="35" selection-start="182" selection-end="182" vertical-scroll-proportion="0.21036585" vertical-offset="0" max-vertical-offset="460">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/clients/old_clients.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/storage/logs/laravel.log">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="33" selection-start="215" selection-end="215" vertical-scroll-proportion="0.1764706" vertical-offset="0" max-vertical-offset="575">
+        <state line="572" column="0" selection-start="78770" selection-end="78770" vertical-scroll-proportion="0.0" vertical-offset="13156" max-vertical-offset="14260">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="124" selection-start="173" selection-end="173" vertical-scroll-proportion="0.11764706" vertical-offset="0" max-vertical-offset="690">
+        <state line="13" column="48" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Acme/Repositories/ClientRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="33" selection-start="229" selection-end="229" vertical-scroll-proportion="0.48762375" vertical-offset="10" max-vertical-offset="437">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="46" selection-start="902" selection-end="902" vertical-scroll-proportion="0.88235295" vertical-offset="0" max-vertical-offset="713">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/clients/last_seen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="16" selection-start="264" selection-end="264" vertical-scroll-proportion="0.35060975" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ClientsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="0" selection-start="2786" selection-end="2786" vertical-scroll-proportion="0.5609756" vertical-offset="2852" max-vertical-offset="3726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/_partials/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="42" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.49085367" vertical-offset="759" max-vertical-offset="1518">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Acme/Repositories/DbClientRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="62" selection-start="1152" selection-end="1152" vertical-scroll-proportion="0.64705884" vertical-offset="529" max-vertical-offset="1978">
+          <folding>
+            <marker date="1410129607000" expanded="true" signature="491:822" placeholder="SELECT clien..clients..." />
+            <marker date="1410129607000" expanded="true" signature="662:749" placeholder="SELECT MAX(l..lecons..." />
+            <marker date="1410129607000" expanded="true" signature="913:1352" placeholder="SELECT clien..clients..." />
+            <marker date="1410129607000" expanded="true" signature="1119:1206" placeholder="SELECT MAX(l..lecons..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/clients/last_seen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="76" selection-start="638" selection-end="638" vertical-scroll-proportion="0.6493902" vertical-offset="109" max-vertical-offset="736">
           <folding />
         </state>
       </provider>

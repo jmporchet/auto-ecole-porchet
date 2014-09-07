@@ -7,6 +7,7 @@ interface ClientRepositoryInterface
     public function getCurrentClients();
     public function find($id);
     public function getOldClients();
+    public function getByLastSeen();
     public function getAnniversaires();
     public function archiver($id);
     public function desarchiver($id);

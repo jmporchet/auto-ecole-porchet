@@ -39,9 +39,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class=""><a href="{{ route('clients.index') }}">Clients</a></li>
-                <li><a href="{{ route('exampaths.index') }}">Parcours</a></li>
                 <li><a href="{{ route('clients.old') }}">Clients archivés</a></li>
                 <li><a href="{{ route('clients.anniversaires') }}">Anniversaires</a></li>
+                <li><a href="{{ route('clients.last_seen') }}">Ca fait longtemps</a></li>
+                <li><a href="{{ route('exampaths.index') }}">Parcours</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

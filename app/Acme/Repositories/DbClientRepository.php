@@ -17,10 +17,30 @@ FROM
 LEFT JOIN
   lecons
     ON  lecons.client_id = clients.id
-    AND lecons.updated_at = (SELECT MAX(lookup.updated_at) FROM lecons AS lookup WHERE lookup.client_id = clients.id)
+    AND lecons.created_at = (SELECT MAX(lookup.created_at) FROM lecons AS lookup WHERE lookup.client_id = clients.id)
     WHERE clients.status='courants'
     ORDER BY prenom, lecons.id desc"));
 
+    }
+
+    public function getByLastSeen()
+    {
+        return DB::select(DB::raw("
+SELECT
+  clients.id, nom, prenom, telephone, lecons.created_at as lecons_created_at, lecons.id as lecons
+FROM
+  clients
+LEFT JOIN
+  lecons
+    ON  lecons.client_id = clients.id
+    AND lecons.created_at = (SELECT MAX(lookup.created_at) FROM lecons AS lookup WHERE lookup.client_id = clients.id)
+    WHERE clients.status='courants'
+    AND lecons.created_at < date_sub(now(), interval 1 month)
+    ORDER BY lecons.created_at, lecons.id desc"));
+
+        return Client::with(array('lecons' => function($query) {
+                $query->orderBy('created_at', 'desc')->get();
+            }))->where('status','=','courants')->get();
     }
 
     public function find($id)
@@ -58,7 +78,5 @@ LEFT JOIN
         $client->status = "courants";
         $client->save();
     }
-
-
 
 }

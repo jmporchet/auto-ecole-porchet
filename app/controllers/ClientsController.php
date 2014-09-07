@@ -1,4 +1,7 @@
 <?php
+
+// 0039 33 85 91 52 37 fiorenza
+
 use Acme\Repositories\ClientRepositoryInterface;
 use Acme\Repositories\LeconRepositoryInterface;
 
@@ -123,6 +126,13 @@ class ClientsController extends \BaseController {
         $clients = $this->client->getOldClients();
 
         return View::make('clients.old_clients', compact('clients'));
+    }
+
+    public function lastSeen()
+    {
+        $clients = $this->client->getByLastSeen();
+
+        return View::make('clients.last_seen', compact('clients'));
     }
 
     public function anniversaires()

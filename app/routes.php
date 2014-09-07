@@ -4,6 +4,7 @@
 Route::get('/', 'ClientsController@index');
 
 Route::get('clients/old', ['as'=> 'clients.old', 'uses' => 'ClientsController@old']);
+Route::get('clients/last_seen', ['as'=> 'clients.last_seen', 'uses' => 'ClientsController@lastSeen']);
 Route::get('clients/anniversaires', ['as'=> 'clients.anniversaires', 'uses' => 'ClientsController@anniversaires']);
 Route::get('clients/archiver/{user_id}', ['as'=> 'clients.archiver', 'uses' => 'ClientsController@archiver']);
 Route::get('clients/desarchiver/{user_id}', ['as'=> 'clients.desarchiver', 'uses' => 'ClientsController@desarchiver']);
