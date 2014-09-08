@@ -1,10 +1,10 @@
 @extends('_partials/master')
 @section('content')
-<h1>Liste des clients last seen <small><a href="{{ route('clients.create') }}" class="btn btn-success">nouveau client</a></small></h1>
+<h1>Ca fait longtemps...</h1>
 <table class="table table-striped table-condensed">
     <thead>
     <th>Nom</th>
-    <th>Téléphone</th>
+    <th>Contact</th>
     <th>La dernière fois</th>
     <th><i class="glyphicon-cog glyphicon"></i> Action</th>
     </thead>
@@ -12,7 +12,8 @@
     <tr>
         <td><a href=" {{ route('clients.show', $client->id) }}">{{ $client->prenom }} {{ $client->nom }}</a></td>
         <td>
-             <a href="tel:{{ $client->telephone }}">{{ $client->telephone }}</a>
+            <a href="tel:{{ $client->telephone }}" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-earphone"> Tel</i></a>
+            <a href="sms:{{ $client->telephone }}" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-send"> SMS</i></a>
         </td>
         <td>
              {{ $client->lecons_created_at }}
