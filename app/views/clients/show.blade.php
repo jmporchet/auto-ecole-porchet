@@ -1,6 +1,8 @@
 @extends('_partials/master')
 @section('content')
-<a href="tel:{{ $client->telephone }}">{{ $client->telephone }}</a> <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> editer</a><br>
+<a href="tel:{{ $client->telephone }}"><i class="glyphicon glyphicon-earphone"> Tel</i></a>
+<a href="sms:{{ $client->telephone }}"><i class="glyphicon glyphicon-send"> SMS</i></a>
+<a href="{{ route('clients.edit', $client->id) }}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> editer</a>
 <h1>Les leçons de {{ $client->prenom }} <small><a href="{{ url('lecons/create/'.$client->id) }}" class="btn btn-success">nouvelle leçon</a></small></h1>
 <table class="table table-responsive">
     <thead>

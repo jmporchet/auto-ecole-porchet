@@ -1,5 +1,5 @@
 <?php
-$file = file_get_contents('/var/www/cours.json');
+$file = file_get_contents('./cours.json');
 $contents = json_decode($file);
 
 $host = 'localhost';

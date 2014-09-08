@@ -1,5 +1,5 @@
 <?php
-$file = file_get_contents('/var/www/clients.json');
+$file = file_get_contents('./clients.json');
 $contents = json_decode($file);
 
 //die(var_dump($contents->Data[98][31]));
@@ -19,13 +19,14 @@ mysql_query("TRUNCATE TABLE lecons");
 echo "importation des clients\n"; 
 foreach ($contents->Data as $data)
 {
+	$uid = $data[0];
 	$created_at = $data[1]->e;
 	$updated_at = is_object($data[2]) ? $data[2]->e : $data[1]->e;
-	$nom = $data[3];
-	$prenom = $data[4];
+	$nom = utf8_decode(addslashes($data[3]));
+	$prenom = utf8_decode(addslashes($data[4]));
 	$telephone = is_array($data[7]) ? $data[7][0]->value : '';
 	$email = is_array($data[10]) ? $data[10][0]->value : '';;
-	$profession = $data[14];
+	$profession = utf8_decode(addslashes($data[14]));
 	$date_naissance = is_object($data[15]) ? $data[15]->e : '';
 	$volant = $data[18];
 	$regard = $data[19];
@@ -40,20 +41,21 @@ foreach ($contents->Data as $data)
 	$autoroute = $data[28];
 	$manoeuvres = $data[29];
 	$type_examen = ($data[31] == "Examen suisse") ? 'examen suisse' : utf8_decode('course de contrôle');
-	$trouve_comment = $data[32];
+	$trouve_comment = utf8_decode(addslashes($data[32]));
 	$status = ($data[34] === "0") ? 'courants' : utf8_decode('réussis');
-	$notes = $data[37];
+	$notes = utf8_decode(addslashes($data[37]));
 
 	$clients_query = "INSERT IGNORE INTO clients SET 
-	prenom='".utf8_decode(addslashes($prenom))."', 
-	nom='".utf8_decode(addslashes($nom))."', 
+	uid='".$uid."',
+	prenom='".$prenom."', 
+	nom='".$nom."', 
 	telephone='".$telephone."', 
-	profession='".utf8_decode(addslashes($profession))."', 
+	profession='".$profession."', 
 	date_naissance='".$date_naissance."',
 	email='".$email."',
 	type_examen='".$type_examen."',
-	notes='".utf8_decode(addslashes($notes))."',
-	trouve_comment='".utf8_decode(addslashes($trouve_comment))."',
+	notes='".$notes."',
+	trouve_comment='".$trouve_comment."',
 	regard='".$regard."',
 	volant='".$volant."',
 	accelerateur='".$accelerateur."',
@@ -110,6 +112,10 @@ mysql_query("TRUNCATE webapp.cours");
 echo "migration des données\n";
 mysql_query("INSERT INTO webapp.clients SELECT * FROM porchet.clients");
 mysql_query("INSERT INTO webapp.lecons SELECT * FROM porchet.lecons");
+
+echo "dump de la base\n";
+echo system("mysqldump --user root --password=root webapp > webapp.sql");
+
 
 echo "\n"; 
 echo "Terminé\n";
