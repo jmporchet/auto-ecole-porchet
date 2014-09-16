@@ -7,12 +7,14 @@
     @else
     <small><a href="{{ url('clients/desarchiver', $client->id) }}" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-briefcase"></i> désarchiver</a></small>
     @endif
+    <a href="{{ url('https://www.facebook.com/search/results/?q='.$client->email) }}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-briefcase"></i> fb</a>
 </h1>
 {{ Form::model($client,
     [
         'route' => ['clients.update', $client->id ],
         'method' => 'patch',
-        'class' => 'form-horizontal'
+        'class' => 'form-horizontal',
+        'files' => true
     ])
 }}
 @include('clients._partials.form')

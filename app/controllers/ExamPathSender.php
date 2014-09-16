@@ -25,7 +25,8 @@ class ExamPathSender extends \BaseController {
             $message->to($client->email, $client->prenom.' '.$client->nom)->subject('Parcours d\'examen du '.date('d.m', time()));
 
         });
-        return Redirect::to('clients/1');
+
+        return Redirect::route('clients.show', $client->id);
 	}
 
     private function prepareEmail()

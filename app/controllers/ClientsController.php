@@ -103,9 +103,22 @@ class ClientsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+        if (Input::hasFile('permis')) {
+            try {
+                $destination_path = public_path() . '/uploads/';
+                $destination_filename = $client->id.'_'.$client->prenom . '_'.date('Ymd_His').'.'.Input::file('permis')->getClientOriginalExtension();
+                $file = Input::file('permis')->move($destination_path, $destination_filename);
+                Notification::success('fichier téléchargé avec succès');
+            } catch(Exception $e) {
+                // Handle your error here.
+                // You might want to log $e->getMessage() as that will tell you why the file failed to move.
+                Notification::error($e->getMessage());
+            }
+            $data['permis'] = $destination_filename;
+        }
 		$client->update($data);
 
-		return Redirect::route('clients.index');
+		return Redirect::route('clients.show', $id);
 	}
 
 	/**

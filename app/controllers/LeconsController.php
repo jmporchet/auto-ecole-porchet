@@ -65,6 +65,7 @@ class LeconsController extends \BaseController {
 	public function edit($id)
 	{
 		$lecon = Lecon::find($id);
+
         $client = Client::where('id', '=', $lecon->client_id)->first();
 
 		return View::make('lecons.edit', compact('lecon', 'client'));

@@ -5,7 +5,8 @@
 {{ Form::open([
     'route' => ['clients.store' ],
     'method' => 'post',
-    'class' => 'form-horizontal'
+    'class' => 'form-horizontal',
+    'files' => true
 ]) }}
 @include('clients._partials.form')
 {{ Form::close() }}
