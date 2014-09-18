@@ -4,15 +4,17 @@
 
 use Acme\Repositories\ClientRepositoryInterface;
 use Acme\Repositories\LeconRepositoryInterface;
+use Acme\Repositories\PaiementRepositoryInterface;
 
 class ClientsController extends \BaseController {
 
     protected $client;
 
-    public function __construct(ClientRepositoryInterface $client, LeconRepositoryInterface $lecon)
+    public function __construct(ClientRepositoryInterface $client, LeconRepositoryInterface $lecon, PaiementRepositoryInterface $paiement)
     {
         $this->client = $client;
         $this->lecon = $lecon;
+        $this->paiement = $paiement;
     }
 
 	/**
@@ -25,7 +27,7 @@ class ClientsController extends \BaseController {
 		$clients = $this->client->getCurrentClients();
         $lecons = $this->lecon->all();
 
-		return View::make('clients.index', compact('clients', 'econs'));
+		return View::make('clients.index', compact('clients', 'lecons'));
 	}
 
 	/**
@@ -52,9 +54,9 @@ class ClientsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Client::create($data);
+		$client = Client::create($data);
 
-		return Redirect::route('clients.index');
+		return Redirect::route('clients.show', $client->id);
 	}
 
 	/**
@@ -116,7 +118,8 @@ class ClientsController extends \BaseController {
             }
             $data['permis'] = $destination_filename;
         }
-		$client->update($data);
+		if ($client->update($data) )
+            Notification::success('Client mis à jour');
 
 		return Redirect::route('clients.show', $id);
 	}
@@ -129,7 +132,8 @@ class ClientsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Client::destroy($id);
+		if (Client::destroy($id))
+            Notification::success('Client détruit');
 
 		return Redirect::route('clients.index');
 	}
@@ -156,7 +160,8 @@ class ClientsController extends \BaseController {
 
     public function archiver($id)
     {
-        $this->client->archiver($id);
+        if ($this->client->archiver($id) )
+            Notification::success('Client archivé');
 
         return Redirect::route('clients.index');
     }
@@ -165,7 +170,7 @@ class ClientsController extends \BaseController {
     {
         $this->client->desarchiver($id);
 
-        return Redirect::route('clients.index');
+        return Redirect::route('clients.show', $this->client->id);
     }
 
 }

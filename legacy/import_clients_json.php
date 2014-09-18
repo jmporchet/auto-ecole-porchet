@@ -46,7 +46,6 @@ foreach ($contents->Data as $data)
 	$notes = utf8_decode(addslashes($data[37]));
 
 	$clients_query = "INSERT IGNORE INTO clients SET 
-	uid='".$uid."',
 	prenom='".$prenom."', 
 	nom='".$nom."', 
 	telephone='".$telephone."', 
@@ -72,7 +71,7 @@ foreach ($contents->Data as $data)
 	created_at='".$created_at."',
 	updated_at='".$updated_at."'";
 
-mysql_query($clients_query);
+mysql_query($clients_query) or die(mysql_error());
 
 $client_insert_id = mysql_insert_id();
 
@@ -82,7 +81,7 @@ $client_insert_id = mysql_insert_id();
         foreach ($data[30] as $cours)
         {
             $query = "INSERT IGNORE INTO lecons SET client_id='".$client_insert_id."', uid='".$cours."';";
-            mysql_query($query);
+            mysql_query($query) or die(mysql_error());
         }
     }
 }
@@ -106,12 +105,12 @@ if(!in_array(trim($line), $oui)){
     exit;
 }
 echo "effacement des données de prod\n";
-mysql_query("TRUNCATE webapp.clients");
-mysql_query("TRUNCATE webapp.cours");
+mysql_query("TRUNCATE webapp.clients") or die(mysql_error());
+mysql_query("TRUNCATE webapp.lecons") or die(mysql_error());
 
 echo "migration des données\n";
-mysql_query("INSERT INTO webapp.clients SELECT * FROM porchet.clients");
-mysql_query("INSERT INTO webapp.lecons SELECT * FROM porchet.lecons");
+mysql_query("INSERT INTO webapp.clients SELECT * FROM porchet.clients") or die(mysql_error());
+mysql_query("INSERT INTO webapp.lecons SELECT * FROM porchet.lecons") or die(mysql_error());
 
 echo "dump de la base\n";
 echo system("mysqldump --user root --password=root webapp > webapp.sql");

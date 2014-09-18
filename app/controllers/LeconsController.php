@@ -38,9 +38,10 @@ class LeconsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Lecon::create($data);
+		if ( Lecon::create($data) )
+            Notification::success('Leçon ajoutée');
 
-		return Redirect::to('clients/'.$data["client_id"]);
+		return Redirect::route('clients.show', $data["client_id"]);
 	}
 
 	/**
@@ -88,7 +89,8 @@ class LeconsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$lecon->update($data);
+		if ( $lecon->update($data) )
+            Notification::success('Leçon mise à jour');
 
 		return Redirect::route('clients.show', $lecon->client_id);
 	}
@@ -102,7 +104,8 @@ class LeconsController extends \BaseController {
 	public function destroy($id)
 	{
         $lecon = Lecon::findOrFail($id);
-		Lecon::destroy($id);
+		if ( Lecon::destroy($id) )
+            Notification::success('Leçon effacée');
 
 		return Redirect::route('clients.show', $lecon->client_id);
 	}

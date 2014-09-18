@@ -26,7 +26,9 @@
     </tr>
 @endforeach
 </table>
-
+<!-- paiements -->
+{{
+<!-- /paiements -->
 <div class="panel-group" id="accordion">
     <div class="panel panel-default">
         <div class="panel-heading">

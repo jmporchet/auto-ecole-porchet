@@ -14,7 +14,7 @@ class AddPermisToClientsTable extends Migration {
 	{
 		Schema::table('clients', function(Blueprint $table)
 		{
-			$table->string('permis')->after('status');
+			$table->string('permis')->nullable()->after('status');
 		});
 	}
 

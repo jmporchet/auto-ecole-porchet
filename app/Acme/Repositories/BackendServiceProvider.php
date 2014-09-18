@@ -14,5 +14,9 @@ class BackendServiceProvider extends ServiceProvider
             'Acme\Repositories\LeconRepositoryInterface',
             'Acme\Repositories\DbLeconRepository'
         );
+        $this->app->bind(
+            'Acme\Repositories\PaiementRepositoryInterface',
+            'Acme\Repositories\DbPaiementRepository'
+        );
     }
 }
