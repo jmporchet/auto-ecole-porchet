@@ -15,6 +15,7 @@ mysql_query("use $database", $db);
 echo "effacement des données de staging\n"; 
 mysql_query("TRUNCATE TABLE clients");
 mysql_query("TRUNCATE TABLE lecons");
+mysql_query("TRUNCATE TABLE paiements");
 
 echo "importation des clients\n"; 
 foreach ($contents->Data as $data)
@@ -84,6 +85,15 @@ $client_insert_id = mysql_insert_id();
             mysql_query($query) or die(mysql_error());
         }
     }
+
+    if(is_array($data[33]))
+    {
+    	foreach ($data[33] as $paiement)
+    	{
+    		$query_paiement = "INSERT IGNORE INTO paiements SET client_id='".$client_insert_id."', uid='".substr($paiement, strpos($paiement, ':')+1)."';";
+            mysql_query($query_paiement) or die(mysql_error());
+    	}
+    }
 }
 
 $oui = array('oui', 'yes', 'y', 'o');
@@ -97,6 +107,16 @@ if(!in_array(trim($line), $oui)){
 echo "importation des cours\n";
 passthru('php import_cours_json.php');
 
+echo "Dois-je continuer avec les paiements ? ";
+$handle = fopen ("php://stdin","r");
+$line = fgets($handle);
+if(!in_array(trim($line), $oui)){
+    echo "ABORTING!\n";
+    exit;
+}
+echo "importation des paiements\n";
+passthru('php import_paiements_json.php');
+
 echo "Dois-je migrer les données en prod ? ";
 $handle = fopen ("php://stdin","r");
 $line = fgets($handle);
@@ -107,10 +127,12 @@ if(!in_array(trim($line), $oui)){
 echo "effacement des données de prod\n";
 mysql_query("TRUNCATE webapp.clients") or die(mysql_error());
 mysql_query("TRUNCATE webapp.lecons") or die(mysql_error());
+mysql_query("TRUNCATE webapp.paiements") or die(mysql_error());
 
 echo "migration des données\n";
 mysql_query("INSERT INTO webapp.clients SELECT * FROM porchet.clients") or die(mysql_error());
 mysql_query("INSERT INTO webapp.lecons SELECT * FROM porchet.lecons") or die(mysql_error());
+mysql_query("INSERT INTO webapp.paiements SELECT * FROM porchet.paiements") or die(mysql_error());
 
 echo "dump de la base\n";
 echo system("mysqldump --user root --password=root webapp > webapp.sql");

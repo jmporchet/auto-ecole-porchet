@@ -70,9 +70,43 @@ class ClientsController extends \BaseController {
         /* Select c.contenu, c.heures from cours as c, eleves_cours as ec, table_eleves as e where e.prenom LIKE "%galyna%" and e.client_uid= ec.client_uid and c.cours_uid = ec.cours_uid; */
 		$client = $this->client->find($id);
         $lecons = $this->lecon->byClient($client->id);
+        $paiements = $this->paiement->byClient($client->id);
         $exampaths = ExamPath::all();
 
-		return View::make('clients.show', compact('client', 'lecons', 'exampaths'));
+		return View::make('clients._partials.resume', compact('client', 'lecons', 'paiements', 'exampaths'));
+	}
+
+	/**
+	 * Display the specified client.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function lecons($id)
+	{
+        /* Select c.contenu, c.heures from cours as c, eleves_cours as ec, table_eleves as e where e.prenom LIKE "%galyna%" and e.client_uid= ec.client_uid and c.cours_uid = ec.cours_uid; */
+		$client = $this->client->find($id);
+        $lecons = $this->lecon->byClient($client->id);
+        $paiements = $this->paiement->byClient($client->id);
+        $exampaths = ExamPath::all();
+
+		return View::make('clients._partials.lecons', compact('client', 'lecons', 'paiements', 'exampaths'));
+	}
+	/**
+	 * Display the specified client.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function paiements($id)
+	{
+        /* Select c.contenu, c.heures from cours as c, eleves_cours as ec, table_eleves as e where e.prenom LIKE "%galyna%" and e.client_uid= ec.client_uid and c.cours_uid = ec.cours_uid; */
+		$client = $this->client->find($id);
+        $lecons = $this->lecon->byClient($client->id);
+        $paiements = $this->paiement->byClient($client->id);
+        $exampaths = ExamPath::all();
+
+		return View::make('clients._partials.paiements', compact('client', 'lecons', 'paiements', 'exampaths'));
 	}
 
 	/**

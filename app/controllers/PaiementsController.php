@@ -2,106 +2,111 @@
 
 class PaiementsController extends \BaseController {
 
-	/**
-	 * Display a listing of paiements
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$paiements = Paiement::all();
+    /**
+     * Display a listing of paiements
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $paiements = Paiement::all();
 
-		return View::make('paiements.index', compact('paiements'));
-	}
+        return View::make('paiements.index', compact('paiements'));
+    }
 
-	/**
-	 * Show the form for creating a new paiement
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		return View::make('paiements.create');
-	}
+    /**
+     * Show the form for creating a new paiement
+     *
+     * @return Response
+     */
+    public function create($client_id)
+    {
+        $client = Client::find($client_id);
 
-	/**
-	 * Store a newly created paiement in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		$validator = Validator::make($data = Input::all(), Paiement::$rules);
+        return View::make('paiements.create', compact('client'));
+    }
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+    /**
+     * Store a newly created paiement in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $validator = Validator::make($data = Input::all(), Paiement::$rules);
 
-		Paiement::create($data);
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
 
-		return Redirect::route('paiements.index');
-	}
+        if (Paiement::create($data)) Notification::success('paiement ajouté');
 
-	/**
-	 * Display the specified paiement.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$paiement = Paiement::findOrFail($id);
+        return Redirect::route('clients.show', $data["client_id"]);
+    }
 
-		return View::make('paiements.show', compact('paiement'));
-	}
+    /**
+     * Display the specified paiement.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        $paiement = Paiement::findOrFail($id);
 
-	/**
-	 * Show the form for editing the specified paiement.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		$paiement = Paiement::find($id);
+        return View::make('paiements.show', compact('paiement'));
+    }
 
-		return View::make('paiements.edit', compact('paiement'));
-	}
+    /**
+     * Show the form for editing the specified paiement.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $paiement = Paiement::find($id);
 
-	/**
-	 * Update the specified paiement in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		$paiement = Paiement::findOrFail($id);
+        $client = Client::where('id', '=', $paiement->client_id)->first();
 
-		$validator = Validator::make($data = Input::all(), Paiement::$rules);
+        return View::make('paiements.edit', compact('paiement', 'client'));
+    }
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+    /**
+     * Update the specified paiement in storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $paiement = Paiement::findOrFail($id);
 
-		$paiement->update($data);
+        $validator = Validator::make($data = Input::all(), Paiement::$rules);
 
-		return Redirect::route('paiements.index');
-	}
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
 
-	/**
-	 * Remove the specified paiement from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		Paiement::destroy($id);
+        if ($paiement->update($data)) Notification::success('paiement mis à jour');
 
-		return Redirect::route('paiements.index');
-	}
+        return Redirect::route('clients.show', $paiement->client_id);
+    }
+
+    /**
+     * Remove the specified paiement from storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $paiement = Paiement::findOrFail($id);
+        if (Paiement::destroy($id)) Notification::success('paiement effacé');
+
+        return Redirect::route('clients.show', $paiement->client_id);
+    }
 
 }

@@ -7,6 +7,31 @@ use DB;
 class DbPaiementRepository implements PaiementRepositoryInterface
 {
     protected $client_uid;
+    protected $montant;
+    protected $credits;
+
+    /**
+     * @return mixed
+     */
+    public function getMontant()
+    {
+        return $this->montant;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCredits()
+    {
+        return $this->credits;
+    }
+
+    public function byClient($id)
+    {
+        $client_id = Client::findOrFail($id)->id;
+
+        return Paiement::where('client_id','=',$client_id)->orderBy('date', 'desc')->get();
+    }
 
     public function find($id)
     {
@@ -14,17 +39,33 @@ class DbPaiementRepository implements PaiementRepositoryInterface
         return $id;
     }
 
-    public function comptabilisePaiement($montant)
+    public function comptabilisePaiement($client_id, $montant)
     {
-        // TODO: Implement comptabilisePaiement() method.
-        return $montant;
+        $this->montant = $montant;
     }
 
-    public function getCredits($client_id)
+    public function convertirMontantEnCredits($montant)
     {
-        // TODO: Implement getCredits() method.
+        switch ($montant)
+        {
+            case '95':
+                $this->credits = 1;
+                break;
+            case '460':
+                $this->credits = 5;
+                break;
+            case '900':
+                $this->credits = 10;
+                break;
+            default:
+                $this->credits = 0;
+                break;
+        }
+    }
+
+    public function getCreditsForClient($client_id)
+    {
         return $client_id;
     }
-
 
 }

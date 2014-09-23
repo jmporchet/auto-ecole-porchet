@@ -5,6 +5,7 @@ use Paiement;
 interface PaiementRepositoryInterface
 {
     public function find($id);
-    public function comptabilisePaiement($montant);
-    public function getCredits($client_id);
+    public function comptabilisePaiement($client_id, $montant);
+    public function convertirMontantEnCredits($montant);
+    public function getCreditsForClient($client_id);
 }

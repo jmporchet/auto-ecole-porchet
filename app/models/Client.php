@@ -16,4 +16,9 @@ class Client extends \Eloquent {
         return $this->hasMany('Lecon');
     }
 
+    public function paiements()
+    {
+        return $this->hasMany('Paiement');
+    }
+
 }
