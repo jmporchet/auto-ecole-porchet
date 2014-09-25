@@ -1,6 +1,18 @@
 <?php
 
+use Acme\Repositories\ClientRepositoryInterface;
+use Acme\Repositories\LeconRepositoryInterface;
+use Acme\Repositories\PaiementRepositoryInterface;
+
 class PaiementsController extends \BaseController {
+
+    function __construct(ClientRepositoryInterface $client, LeconRepositoryInterface $lecon, PaiementRepositoryInterface $paiement)
+    {
+        $this->client = $client;
+        $this->lecon = $lecon;
+        $this->paiement = $paiement;
+    }
+
 
     /**
      * Display a listing of paiements
@@ -40,6 +52,8 @@ class PaiementsController extends \BaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
+        $data['credits'] = $this->paiement->convertirMontantEnCredits($data['montant']);
+        
         if (Paiement::create($data)) Notification::success('paiement ajouté');
 
         return Redirect::route('clients.show', $data["client_id"]);

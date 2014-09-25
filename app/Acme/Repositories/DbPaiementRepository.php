@@ -46,21 +46,26 @@ class DbPaiementRepository implements PaiementRepositoryInterface
 
     public function convertirMontantEnCredits($montant)
     {
+        $credits = '0';
         switch ($montant)
         {
             case '95':
-                $this->credits = 1;
+                $credits = 1;
+                break;
+            case '190':
+                $credits = 2;
                 break;
             case '460':
-                $this->credits = 5;
+                $credits = 5;
                 break;
             case '900':
-                $this->credits = 10;
+                $credits = 10;
                 break;
             default:
-                $this->credits = 0;
+                $credits = 0;
                 break;
         }
+        return $credits;
     }
 
     public function getCreditsForClient($client_id)
