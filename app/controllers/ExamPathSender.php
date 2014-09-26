@@ -20,12 +20,13 @@ class ExamPathSender extends \BaseController {
             $exampaths[] = ExamPath::find($exam_id);
         }
         $data = array('exampaths' => $exampaths, 'prenom' => $client->prenom);
-        Mail::send('emails.exampath', $data, function ($message) use ($client)
+        $envoye = Mail::send('emails.exampath', $data, function ($message) use ($client)
         {
             $message->to($client->email, $client->prenom . ' ' . $client->nom)->subject('Parcours d\'examen du ' . date('d.m', time()));
 
         });
 
+        if ($envoye) Notification::success('Email envoyé');
         return Redirect::route('clients.show', $client->id);
     }
 
