@@ -9,7 +9,7 @@
     @foreach ($anniversaires as $anniversaire)
     <tr>
         <td>{{ $anniversaire->date_naissance }}</td>
-        <td><a href="{{ route('clients.edit', $anniversaire->id) }}">{{ $anniversaire->prenom }}</a></td>
+        <td><a href="{{ route('clients.edit', $anniversaire->id) }}">{{ $anniversaire->prenom }} {{ $anniversaire->nom }}</a></td>
     </tr>
     @endforeach
 </table>
