@@ -26,3 +26,4 @@ Route::post('exampathsender/send', array('as' => 'sendexam', 'uses' => 'ExamPath
 
 Route::resource('pages', 'PagesController');
 
+Route::get('statistiques', 'StatistiquesController@index');
